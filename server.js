@@ -10,7 +10,7 @@ async function testPandaDatabase() {
     // const res = await client.query('select * from todos')
     const res = await client.query("insert into todos (description, status) values('find friends', true)")
     console.log(res.rows)
-    // await client.end()
+    await client.end()
 }
 
 testPandaDatabase();
