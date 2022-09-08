@@ -5,7 +5,7 @@ console.log("hello world");
 async function testPandaDatabase() { 
 
     console.log("function start")
-    const client = new Client({connectionString: process.env.PANDASECRET, ssl: {rejectUnauthorized: false}})
+    const client = new Client({connectionString: process.env.DATABASE_URL, ssl: {rejectUnauthorized: false}})
     await client.connect()
     const res = await client.query('select * from todos')
     // const res = await client.query("insert into todos (description, status) values('find friends', true)")
